@@ -1,0 +1,87 @@
+$schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
+resources:
+- name: VsCodeSettings
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\Code\User" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\vscode\settings.json" -Destination "C:\Users\tema\AppData\Roaming\Code\User\settings.json" -Force'
+- name: VsCodeKeybindings
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\Code\User" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\vscode\keybindings.json" -Destination "C:\Users\tema\AppData\Roaming\Code\User\keybindings.json" -Force'
+- name: GhConfig
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\GitHub CLI" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\gh\config.yml" -Destination "C:\Users\tema\AppData\Roaming\GitHub CLI\config.yml" -Force'
+- name: GitConfigLaptop
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE-LAPTOP')]"
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'Copy-Item -LiteralPath "C:\code\DSC-profile\configs\git\.gitconfig" -Destination "C:\Users\tema\.gitconfig" -Force'
+- name: WindowsTerminalSettings
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE-LAPTOP')]"
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'Copy-Item -LiteralPath "C:\code\DSC-profile\configs\windowsterminal\settings.json" -Destination "C:\Users\tema\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Force'
+- name: KeePassXCConfig
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE-LAPTOP')]"
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\KeePassXC" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\keepassxc\keepassxc.ini" -Destination "C:\Users\tema\AppData\Roaming\KeePassXC\keepassxc.ini" -Force'
+- name: PowerShellProfile
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE-LAPTOP')]"
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\Documents\PowerShell" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\powershell\Microsoft.PowerShell_profile.ps1" -Destination "C:\Users\tema\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force'
+- name: GitConfigDesktop
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE')]"
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'Copy-Item -LiteralPath "C:\code\DSC-profile\configs\desktop\git\.gitconfig" -Destination "C:\Users\tema\.gitconfig" -Force'

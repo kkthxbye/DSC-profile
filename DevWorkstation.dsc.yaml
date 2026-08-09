@@ -1,0 +1,51 @@
+$schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
+resources:
+- name: DscProfileHome
+  type: Microsoft.Windows/Registry
+  condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE-LAPTOP')]"
+  properties:
+    keyPath: HKCU\Environment
+    valueName: DSC_PROFILE_HOME
+    valueData:
+      String: C:\code\DSC-profile
+- name: CodeWorkspaceRoot
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE-LAPTOP')]"
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'New-Item -ItemType Directory -Force -Path "C:\code" | Out-Null'
+- name: ShowKnownFileExtensions
+  type: Microsoft.Windows/Registry
+  condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE-LAPTOP')]"
+  properties:
+    keyPath: HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    valueName: HideFileExt
+    valueData:
+      DWord: 0
+- name: EnableLongPaths
+  type: Microsoft.Windows/Registry
+  condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE-LAPTOP')]"
+  properties:
+    keyPath: HKLM\SYSTEM\CurrentControlSet\Control\FileSystem
+    valueName: LongPathsEnabled
+    valueData:
+      DWord: 1
+- name: DefenderRunning
+  type: Microsoft.Windows/Service
+  condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE-LAPTOP')]"
+  properties:
+    name: WinDefend
+    status: Running
+    startType: Automatic
+- name: WindowsUpdateRunning
+  type: Microsoft.Windows/Service
+  condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE-LAPTOP')]"
+  properties:
+    name: wuauserv
+    status: Running
+    startType: Automatic
