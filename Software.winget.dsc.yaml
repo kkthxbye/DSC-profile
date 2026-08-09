@@ -161,3 +161,237 @@ resources:
   properties:
     id: "calibre.calibre"
     source: "winget"
+- name: winget_astral-sh.uv
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "astral-sh.uv"
+    source: "winget"
+- name: winget_Microsoft.WinDbg
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Microsoft.WinDbg"
+    source: "winget"
+- name: winget_Microsoft.WSL
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Microsoft.WSL"
+    source: "winget"
+- name: winget_JanDeDobbeleer.OhMyPosh
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "JanDeDobbeleer.OhMyPosh"
+    source: "winget"
+- name: winget_Microsoft.PowerToys
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Microsoft.PowerToys"
+    source: "winget"
+- name: winget_SlackTechnologies.Slack
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "SlackTechnologies.Slack"
+    source: "winget"
+- name: winget_Zoom.Zoom
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Zoom.Zoom"
+    source: "winget"
+- name: winget_Google.PlatformTools
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Google.PlatformTools"
+    source: "winget"
+- name: winget_Genymobile.scrcpy
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Genymobile.scrcpy"
+    source: "winget"
+- name: winget_Google.AntigravityIDE
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Google.AntigravityIDE"
+    source: "winget"
+- name: winget_Microsoft.Edit
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Microsoft.Edit"
+    source: "winget"
+- name: winget_ZedIndustries.Zed
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "ZedIndustries.Zed"
+    source: "winget"
+- name: winget_Docker.DockerDesktop
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Docker.DockerDesktop"
+    source: "winget"
+- name: winget_Docker.DockerCLI
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Docker.DockerCLI"
+    source: "winget"
+- name: winget_Docker.DockerCompose
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Docker.DockerCompose"
+    source: "winget"
+- name: winget_Derailed.k9s
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Derailed.k9s"
+    source: "winget"
+- name: winget_Kubernetes.minikube
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Kubernetes.minikube"
+    source: "winget"
+- name: winget_GoLang.Go
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "GoLang.Go"
+    source: "winget"
+- name: winget_Rustlang.Rustup
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Rustlang.Rustup"
+    source: "winget"
+- name: winget_Ollama.Ollama
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Ollama.Ollama"
+    source: "winget"
+- name: winget_Yarn.Yarn
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Yarn.Yarn"
+    source: "winget"
+- name: winget_CoreyButler.NVMforWindows
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "CoreyButler.NVMforWindows"
+    source: "winget"
+- name: winget_DigitalOcean.Doctl
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "DigitalOcean.Doctl"
+    source: "winget"
+- name: winget_Google.CloudSDK
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Google.CloudSDK"
+    source: "winget"
+- name: winget_mitmproxy.mitmproxy
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "mitmproxy.mitmproxy"
+    source: "winget"
+- name: winget_Insecure.Nmap
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Insecure.Nmap"
+    source: "winget"
+- name: winget_Cloudflare.cloudflared
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Cloudflare.cloudflared"
+    source: "winget"
+- name: winget_Tailscale.Tailscale
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Tailscale.Tailscale"
+    source: "winget"
+- name: winget_WireGuard.WireGuard
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "WireGuard.WireGuard"
+    source: "winget"
+- name: winget_Microsoft.OpenSSH.Preview
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Microsoft.OpenSSH.Preview"
+    source: "winget"
+- name: winget_Insomnia.Insomnia
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Insomnia.Insomnia"
+    source: "winget"
+- name: winget_cURL.cURL
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "cURL.cURL"
+    source: "winget"
+- name: winget_7zip.7zip
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "7zip.7zip"
+    source: "winget"
+- name: winget_SQLite.SQLite
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "SQLite.SQLite"
+    source: "winget"
+- name: winget_tsl0922.ttyd
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "tsl0922.ttyd"
+    source: "winget"
+- name: winget_yitsushi.totp-cli
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "yitsushi.totp-cli"
+    source: "winget"
+- name: winget_Microsoft.VisualStudio.BuildTools
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Microsoft.VisualStudio.BuildTools"
+    source: "winget"
+- name: winget_Microsoft.VisualStudio.Community
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Microsoft.VisualStudio.Community"
+    source: "winget"
+- name: winget_Telerik.Fiddler.Classic
+  type: Microsoft.WinGet/Package
+  dependsOn: [winget_source]
+  properties:
+    id: "Telerik.Fiddler.Classic"
+    source: "winget"

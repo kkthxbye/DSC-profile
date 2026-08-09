@@ -78,6 +78,49 @@ Configuration AppConfigs
             MatchSource     = $true
         }
     }
+
+    Node 'KKTHXBYE'
+    {
+        File GitConfig
+        {
+            DestinationPath = 'C:\Users\tema\.gitconfig'
+            SourcePath      = "$Root\configs\desktop\git\.gitconfig"
+            Type            = 'File'
+            Ensure          = 'Present'
+            Checksum        = 'SHA-256'
+            MatchSource     = $true
+        }
+
+        File VsCodeSettings
+        {
+            DestinationPath = 'C:\Users\tema\AppData\Roaming\Code\User\settings.json'
+            SourcePath      = "$Root\configs\vscode\settings.json"
+            Type            = 'File'
+            Ensure          = 'Present'
+            Checksum        = 'SHA-256'
+            MatchSource     = $true
+        }
+
+        File VsCodeKeybindings
+        {
+            DestinationPath = 'C:\Users\tema\AppData\Roaming\Code\User\keybindings.json'
+            SourcePath      = "$Root\configs\vscode\keybindings.json"
+            Type            = 'File'
+            Ensure          = 'Present'
+            Checksum        = 'SHA-256'
+            MatchSource     = $true
+        }
+
+        File GhConfig
+        {
+            DestinationPath = 'C:\Users\tema\AppData\Roaming\GitHub CLI\config.yml'
+            SourcePath      = "$Root\configs\gh\config.yml"
+            Type            = 'File'
+            Ensure          = 'Present'
+            Checksum        = 'SHA-256'
+            MatchSource     = $true
+        }
+    }
 }
 
 AppConfigs -OutputPath '.\AppConfigs'
