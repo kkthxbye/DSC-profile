@@ -1,0 +1,402 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions":
+    [
+        {
+            "command":
+            {
+                "action": "newTab",
+                "index": 3
+            },
+            "id": "User.newTab.F4C304FB"
+        },
+        {
+            "command":
+            {
+                "action": "newTab",
+                "index": 8
+            },
+            "id": "User.newTab.B7F682DF"
+        },
+        {
+            "command":
+            {
+                "action": "switchToTab",
+                "index": 2
+            },
+            "id": "User.switchToTab.87C324ED"
+        },
+        {
+            "command":
+            {
+                "action": "switchToTab",
+                "index": 5
+            },
+            "id": "User.switchToTab.75247157"
+        },
+        {
+            "command":
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
+            "command":
+            {
+                "action": "newTab",
+                "index": 4
+            },
+            "id": "User.newTab.89E6CA61"
+        },
+        {
+            "command":
+            {
+                "action": "switchToTab",
+                "index": 3
+            },
+            "id": "User.switchToTab.6CD791B"
+        },
+        {
+            "command":
+            {
+                "action": "globalSummon"
+            },
+            "id": "User.globalSummon.51A3D78C"
+        },
+        {
+            "command":
+            {
+                "action": "newTab",
+                "index": 1
+            },
+            "id": "User.newTab.1FA5EB5"
+        },
+        {
+            "command":
+            {
+                "action": "newTab"
+            },
+            "id": "User.newTab.5DEADB41"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
+            "command":
+            {
+                "action": "switchToTab",
+                "index": 0
+            },
+            "id": "User.switchToTab.D3F0B923"
+        },
+        {
+            "command":
+            {
+                "action": "switchToTab",
+                "index": 1
+            },
+            "id": "User.switchToTab.2A0DA8E0"
+        },
+        {
+            "command":
+            {
+                "action": "switchToTab",
+                "index": 7
+            },
+            "id": "User.switchToTab.D7681B66"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        },
+        {
+            "command":
+            {
+                "action": "newTab",
+                "index": 2
+            },
+            "id": "User.newTab.CCE909E3"
+        },
+        {
+            "command":
+            {
+                "action": "switchToTab",
+                "index": 4
+            },
+            "id": "User.switchToTab.F747588A"
+        },
+        {
+            "command":
+            {
+                "action": "newTab",
+                "index": 0
+            },
+            "id": "User.newTab.7975BEED"
+        },
+        {
+            "command":
+            {
+                "action": "switchToTab",
+                "index": 8
+            },
+            "id": "User.switchToTab.ED268D78"
+        },
+        {
+            "command":
+            {
+                "action": "newTab",
+                "index": 5
+            },
+            "id": "User.newTab.663EF760"
+        },
+        {
+            "command": "closePane",
+            "id": "User.closePane"
+        },
+        {
+            "command":
+            {
+                "action": "switchToTab",
+                "index": 6
+            },
+            "id": "User.switchToTab.787314EB"
+        },
+        {
+            "command":
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command":
+            {
+                "action": "newTab",
+                "index": 6
+            },
+            "id": "User.newTab.B1B78DBA"
+        },
+        {
+            "command":
+            {
+                "action": "newTab",
+                "index": 7
+            },
+            "id": "User.newTab.E694A910"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "initialCols": 140,
+    "initialRows": 45,
+    "initialPosition": "0,0",
+    "keybindings":
+    [
+        {
+            "id": "User.newTab.B7F682DF",
+            "keys": "ctrl+shift+f9"
+        },
+        {
+            "id": "User.newTab.F4C304FB",
+            "keys": "ctrl+shift+f4"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+9"
+        },
+        {
+            "id": "User.switchToTab.87C324ED",
+            "keys": "ctrl+3"
+        },
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+1"
+        },
+        {
+            "id": "User.globalSummon.51A3D78C",
+            "keys": "alt+`"
+        },
+        {
+            "id": "User.switchToTab.D3F0B923",
+            "keys": "ctrl+1"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+2"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+5"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+3"
+        },
+        {
+            "id": "User.newTab.663EF760",
+            "keys": "ctrl+shift+f6"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+4"
+        },
+        {
+            "id": "User.newTab.5DEADB41",
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+6"
+        },
+        {
+            "id": "User.switchToTab.ED268D78",
+            "keys": "ctrl+9"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+7"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+8"
+        },
+        {
+            "id": null,
+            "keys": "win+`"
+        },
+        {
+            "id": "User.switchToTab.D7681B66",
+            "keys": "ctrl+8"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.newTab.89E6CA61",
+            "keys": "ctrl+shift+f5"
+        },
+        {
+            "id": "User.newTab.CCE909E3",
+            "keys": "ctrl+shift+f3"
+        },
+        {
+            "id": "User.switchToTab.2A0DA8E0",
+            "keys": "ctrl+2"
+        },
+        {
+            "id": "User.switchToTab.F747588A",
+            "keys": "ctrl+5"
+        },
+        {
+            "id": "User.newTab.7975BEED",
+            "keys": "ctrl+shift+f1"
+        },
+        {
+            "id": "User.newTab.E694A910",
+            "keys": "ctrl+shift+f8"
+        },
+        {
+            "id": "User.switchToTab.787314EB",
+            "keys": "ctrl+7"
+        },
+        {
+            "id": "User.switchToTab.75247157",
+            "keys": "ctrl+6"
+        },
+        {
+            "id": "User.newTab.1FA5EB5",
+            "keys": "ctrl+shift+f2"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "ctrl+shift+e"
+        },
+        {
+            "id": "User.closePane",
+            "keys": "ctrl+w"
+        },
+        {
+            "id": "User.switchToTab.6CD791B",
+            "keys": "ctrl+4"
+        },
+        {
+            "id": "User.newTab.B1B78DBA",
+            "keys": "ctrl+shift+f7"
+        }
+    ],
+    "newTabMenu":
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles":
+    {
+        "defaults":
+        {
+            "antialiasingMode": "cleartype",
+            "colorScheme": "Tango Dark",
+            "cursorShape": "bar",
+            "font":
+            {
+                "builtinGlyphs": false,
+                "face": "Consolas NF",
+                "size": 11
+            },
+            "opacity": 90,
+            "startingDirectory": null,
+            "useAcrylic": true
+        },
+        "list":
+        [
+            {
+                "commandline": "pwsh.exe -nologo",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/pwsh.png",
+                "name": "PowerShell",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "commandline": "C:\\Program Files\\Far Manager\\Far.exe",
+                "guid": "{e9db4c3e-e860-4b8f-a086-c593a0224f55}",
+                "hidden": false,
+                "icon": "C:\\Program Files\\Far Manager\\Far.exe",
+                "name": "FAR",
+                "padding": "0, 0, 0, 0"
+            },
+            {
+                "guid": "{ccf8cef0-e999-549f-91b6-2d413355e486}",
+                "hidden": false,
+                "icon": "C:\\tools\\bash.ico",
+                "name": "Ubuntu-24.04",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "commandline": "ssh kkthxbye-work-wsl-native",
+                "guid": "{0de89723-dc71-4b1c-ad08-b07338298978}",
+                "hidden": false,
+                "icon": "C:\\tools\\bash.ico",
+                "name": "kkthxbye-work (Ubuntu)"
+            }
+        ]
+    },
+    "schemes": [],
+    "themes": []
+}

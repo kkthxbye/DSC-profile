@@ -1,0 +1,325 @@
+{
+  "[dockercompose]": {
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "vscode.markdown-language-features",
+    "editor.tabSize": 2,
+    "files.trimTrailingWhitespace": false
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnType": true
+  },
+  "[snowflake-sql]": {
+    "editor.defaultFormatter": "mtxr.sqltools",
+    "editor.tabSize": 2
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "mtxr.sqltools",
+    "editor.tabSize": 2
+  },
+  "[yaml]": {
+    "diffEditor.ignoreTrimWhitespace": false
+  },
+  "atlascode.bitbucket.enabled": true,
+  "atlascode.bitbucket.explorer.refreshInterval": 5,
+  "atlascode.helpExplorerEnabled": false,
+  "atlascode.jira.explorer.enabled": false,
+  "atlascode.jira.explorer.monitorEnabled": false,
+  "atlascode.jira.hover.enabled": false,
+  "atlascode.jira.statusbar.enabled": true,
+  "atlascode.jira.todoIssues.enabled": false,
+  "atlascode.rovodev.showEntitlementNotifications": false,
+  "atlascode.showWelcomeOnInstall": false,
+  "breadcrumbs.enabled": true,
+  "chat.commandCenter.enabled": false,
+  "chat.titleBar.openInAgentsWindow.enabled": false,
+  "chat.viewSessions.orientation": "stacked",
+  "claudeCode.preferredLocation": "panel",
+  "database-client.autoSync": true,
+  "debug.console.collapseIdenticalLines": false,
+  "debug.console.fontFamily": "Consolas",
+  "debug.console.fontSize": 13.5,
+  "debug.openDebug": "neverOpen",
+  "dev.containers.defaultExtensions": [
+    "ow.vscode-subword-navigation"
+  ],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
+  "docker.extension.enableComposeLanguageServer": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.accessibilitySupport": "off",
+  "editor.fontFamily": "Consolas, Roboto Mono, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontSize": 13.5,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.preview": true,
+  "editor.suggest.showMethods": true,
+  "editor.suggestSelection": "first",
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?_",
+  "explorer.autoReveal": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    ".env": "dotenv",
+    ".local_env": "dotenv",
+    "*.sql": "sql",
+    "*.ssql": "snowflake-sql"
+  },
+  "files.autoSave": "off",
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.mypy_cache": true,
+    "**/.svn": true,
+    "**/.vscode": false,
+    "**/*.pyc": true,
+    "**/CVS": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.watcherExclude": {
+    "**/__pycache__/**": true,
+    "**/.mypy_cache/**": true
+  },
+  "git.autofetch": true,
+  "git.blame.editorDecoration.enabled": true,
+  "git.confirmSync": false,
+  "git.ignoreRebaseWarning": true,
+  "git.openRepositoryInParentFolders": "never",
+  "git.pullTags": false,
+  "git.suggestSmartCommit": false,
+  "github.copilot.enable": {
+    "*": false,
+    "markdown": false,
+    "plaintext": false,
+    "python": false,
+    "scminput": false
+  },
+  "githubPullRequests.createOnPublishBranch": "never",
+  "githubPullRequests.pullBranch": "never",
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false
+  },
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilotcli:",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.codeLens.scopes": [
+    "document",
+    "containers"
+  ],
+  "gitlens.currentLine.enabled": false,
+  "gitlens.defaultGravatarsStyle": "retro",
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.keymap": "alternate",
+  "gitlens.menus": {
+    "editor": {
+      "blame": false,
+      "clipboard": true,
+      "compare": true,
+      "history": false,
+      "remote": false
+    },
+    "editorGroup": false,
+    "editorTab": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "explorer": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "scm": {
+      "authors": true
+    },
+    "scmGroup": {
+      "compare": true,
+      "openClose": true,
+      "stash": true
+    },
+    "scmGroupInline": {
+      "stash": true
+    },
+    "scmItem": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": false,
+      "stash": true
+    }
+  },
+  "json.schemas": [],
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "plantuml.markdown.enable": true,
+  "powershell.codeFormatting.alignPropertyValuePairs": false,
+  "powershell.integratedConsole.suppressTerminalStoppedNotification": true,
+  "powershell.promptToUpdatePowerShell": false,
+  "powershell.suppressTerminalStoppedNotification": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.terminal.activateEnvironment": false,
+  "python.testing.pytestArgs": [
+    "--capture=no",
+    "--disable-warnings",
+    "--quiet"
+  ],
+  "python.testing.pytestEnabled": true,
+  "redhat.telemetry.enabled": true,
+  "remote.autoForwardPortsSource": "hybrid",
+  "remote.SSH.remotePlatform": {
+    "192.168.34.17": "macOS",
+    "46.101.110.231": "linux",
+    "do-ubuntu-s-1vcpu-1gb-fra1-01": "linux",
+    "kkthxbye": "windows",
+    "kkthxbye-laptop": "windows",
+    "kkthxbye-laptop-wsl-native": "linux",
+    "kkthxbye-work-mac": "macOS",
+    "kkthxbye-work-wsl-native": "linux",
+    "kkthxbye-wsl-native": "linux",
+    "sm-csgo": "linux",
+    "WSL": "linux"
+  },
+  "ruff.enable": false,
+  "search.exclude": {
+    "**/.git": true,
+    "**/.venv": true,
+    "**/poetry.lock": true
+  },
+  "search.useIgnoreFiles": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "settingsSync.ignoredSettings": [
+    "editor.fontSize",
+    "terminal.integrated.fontSize",
+    "debug.console.fontSize",
+    "yaml.schemas"
+  ],
+  "snowflake.connectionsConfigFile": "C:\\Users\\tema\\.snowflake\\connections.toml",
+  "sops.defaults.awsProfile": "sm-prod",
+  "sqltools.connections": [
+    {
+      "database": "",
+      "driver": "MySQL",
+      "name": "client_sr-staging-groot-1",
+      "password": "",
+      "port": 9030,
+      "server": "staging-groot-1-starrocks.dev.int.splitmetrics.com",
+      "username": "root"
+    }
+  ],
+  "sqltools.highlightQuery": false,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.defaultProfile.linux": "pwsh clean",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.fontFamily": "Consolas NF",
+  "terminal.integrated.fontSize": 13.5,
+  "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "args": [
+        "-x"
+      ],
+      "path": "bash"
+    },
+    "pwsh clean": {
+      "args": [
+        "-nologo",
+        "-noexit"
+      ],
+      "path": "pwsh"
+    },
+    "zsh": {
+      "path": "zsh"
+    }
+  },
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.tabs.location": "left",
+  "vs-kubernetes": {
+    "vs-kubernetes.crd-code-completion": "enabled",
+    "vs-kubernetes.minikube-show-information-expiration": "2026-08-24T13:36:35.02Z"
+  },
+  "window.title": "${dirty}${activeEditorLong}${separator}${rootName}${separator}${appName}",
+  "window.titleBarStyle": "custom",
+  "workbench.colorCustomizations": {
+    "git.blame.editorDecorationForeground": "#99999940"
+  },
+  "workbench.colorTheme": "Dark Modern",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "git-rebase-todo": "default"
+  },
+  "workbench.panel.defaultLocation": "bottom",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.startupEditor": "none",
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "yaml.schemas": {
+    "file:///home/tema/.vscode-server/extensions/atlassian.atlascode-4.0.13/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "terminal.integrated.initialHint": false
+}
