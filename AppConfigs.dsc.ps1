@@ -6,18 +6,8 @@ Configuration AppConfigs
 
     $Root = $PSScriptRoot
 
-    Node 'localhost'
+    Node ('KKTHXBYE-LAPTOP', 'KKTHXBYE', 'KKTHXBYE-WORK')
     {
-        File GitConfig
-        {
-            DestinationPath = 'C:\Users\tema\.gitconfig'
-            SourcePath      = "$Root\configs\git\.gitconfig"
-            Type            = 'File'
-            Ensure          = 'Present'
-            Checksum        = 'SHA-256'
-            MatchSource     = $true
-        }
-
         File VsCodeSettings
         {
             DestinationPath = 'C:\Users\tema\AppData\Roaming\Code\User\settings.json'
@@ -38,20 +28,33 @@ Configuration AppConfigs
             MatchSource     = $true
         }
 
-        File WindowsTerminalSettings
+        File GhConfig
         {
-            DestinationPath = 'C:\Users\tema\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json'
-            SourcePath      = "$Root\configs\windowsterminal\settings.json"
+            DestinationPath = 'C:\Users\tema\AppData\Roaming\GitHub CLI\config.yml'
+            SourcePath      = "$Root\configs\gh\config.yml"
+            Type            = 'File'
+            Ensure          = 'Present'
+            Checksum        = 'SHA-256'
+            MatchSource     = $true
+        }
+    }
+
+    Node 'KKTHXBYE-LAPTOP'
+    {
+        File GitConfig
+        {
+            DestinationPath = 'C:\Users\tema\.gitconfig'
+            SourcePath      = "$Root\configs\git\.gitconfig"
             Type            = 'File'
             Ensure          = 'Present'
             Checksum        = 'SHA-256'
             MatchSource     = $true
         }
 
-        File GhConfig
+        File WindowsTerminalSettings
         {
-            DestinationPath = 'C:\Users\tema\AppData\Roaming\GitHub CLI\config.yml'
-            SourcePath      = "$Root\configs\gh\config.yml"
+            DestinationPath = 'C:\Users\tema\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json'
+            SourcePath      = "$Root\configs\windowsterminal\settings.json"
             Type            = 'File'
             Ensure          = 'Present'
             Checksum        = 'SHA-256'
@@ -85,36 +88,6 @@ Configuration AppConfigs
         {
             DestinationPath = 'C:\Users\tema\.gitconfig'
             SourcePath      = "$Root\configs\desktop\git\.gitconfig"
-            Type            = 'File'
-            Ensure          = 'Present'
-            Checksum        = 'SHA-256'
-            MatchSource     = $true
-        }
-
-        File VsCodeSettings
-        {
-            DestinationPath = 'C:\Users\tema\AppData\Roaming\Code\User\settings.json'
-            SourcePath      = "$Root\configs\vscode\settings.json"
-            Type            = 'File'
-            Ensure          = 'Present'
-            Checksum        = 'SHA-256'
-            MatchSource     = $true
-        }
-
-        File VsCodeKeybindings
-        {
-            DestinationPath = 'C:\Users\tema\AppData\Roaming\Code\User\keybindings.json'
-            SourcePath      = "$Root\configs\vscode\keybindings.json"
-            Type            = 'File'
-            Ensure          = 'Present'
-            Checksum        = 'SHA-256'
-            MatchSource     = $true
-        }
-
-        File GhConfig
-        {
-            DestinationPath = 'C:\Users\tema\AppData\Roaming\GitHub CLI\config.yml'
-            SourcePath      = "$Root\configs\gh\config.yml"
             Type            = 'File'
             Ensure          = 'Present'
             Checksum        = 'SHA-256'
