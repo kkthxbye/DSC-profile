@@ -74,6 +74,16 @@ resources:
       - -NoProfile
       - -Command
       - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\Documents\PowerShell" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\powershell\Microsoft.PowerShell_profile.ps1" -Destination "C:\Users\tema\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force'
+- name: ThunderbirdFluentBird
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -File
+      - 'C:\code\DSC-profile\configs\thunderbird\Install-FluentBird.ps1'
 - name: GitConfigDesktop
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   condition: "[equals(envvar('COMPUTERNAME'), 'KKTHXBYE')]"
