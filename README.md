@@ -10,4 +10,4 @@ dsc config set -f .\AppConfigs.dsc.yaml
 
 `dsc config test -f <file>` runs the same thing read-only, reporting drift without applying.
 
-Machine-specific resources use `condition: "[equals(envvar('COMPUTERNAME'), 'X')]"` — same file runs unmodified on all three machines.
+All resources are machine-agnostic — the same files run unmodified on any machine.
