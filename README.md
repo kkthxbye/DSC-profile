@@ -3,8 +3,8 @@
 DSC v3
 
 ```
-dsc config set -f .\Software.winget.dsc.yaml
 dsc config set -f .\DevWorkstation.dsc.yaml
+dsc config set -f .\Software.winget.dsc.yaml
 dsc config set -f .\AppConfigs.dsc.yaml
 ```
 
