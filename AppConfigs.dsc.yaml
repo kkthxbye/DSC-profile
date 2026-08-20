@@ -80,3 +80,13 @@ resources:
       - -NoProfile
       - -File
       - 'C:\code\DSC-profile\configs\thunderbird\Install-FluentBird.ps1'
+- name: ConsolasNFFont
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -File
+      - 'C:\code\DSC-profile\configs\fonts\Install-ConsolasNF.ps1'
