@@ -27,6 +27,16 @@ resources:
       - -NoProfile
       - -Command
       - '$list = New-WinUserLanguageList -Language en-US; $list.Add((New-WinUserLanguageList -Language pl)[0]); $list.Add((New-WinUserLanguageList -Language ru)[0]); Set-WinUserLanguageList -LanguageList $list -Force'
+- name: RegionalFormat
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'Set-Culture -CultureInfo en-GB; Set-WinHomeLocation -GeoId 191; Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sShortDate -Value "dd.MM.yyyy"; Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sLongDate -Value "dd MMMM yyyy"; Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sDate -Value "."'
 - name: ShowKnownFileExtensions
   type: Microsoft.Windows/Registry
   properties:
