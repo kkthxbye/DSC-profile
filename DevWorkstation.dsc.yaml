@@ -72,6 +72,34 @@ resources:
     valueName: ConsentPromptBehaviorAdmin
     valueData:
       DWord: 0
+- name: SnapWindows
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Control Panel\Desktop
+    valueName: WindowArrangementActive
+    valueData:
+      String: "1"
+- name: SnapAssist
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    valueName: SnapAssist
+    valueData:
+      DWord: 0
+- name: SnapAssistFlyout
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    valueName: EnableSnapAssistFlyout
+    valueData:
+      DWord: 0
+- name: SnapAssistDragToTop
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    valueName: DITest
+    valueData:
+      DWord: 0
 - name: DesktopWallpaperPath
   type: Microsoft.Windows/Registry
   properties:
