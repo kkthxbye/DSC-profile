@@ -69,6 +69,16 @@
         {
             "command":
             {
+                "action": "globalSummon",
+                "name": "_quake",
+                "dropdownDuration": 200,
+                "toggleVisibility": true
+            },
+            "id": "User.globalSummon.QuakeMode"
+        },
+        {
+            "command":
+            {
                 "action": "newTab",
                 "index": 1
             },
@@ -272,7 +282,7 @@
             "keys": "ctrl+shift+8"
         },
         {
-            "id": null,
+            "id": "User.globalSummon.QuakeMode",
             "keys": "win+`"
         },
         {
