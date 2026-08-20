@@ -221,12 +221,6 @@ resources:
   properties:
     id: "Genymobile.scrcpy"
     source: "winget"
-- name: winget_Google.AntigravityIDE
-  type: Microsoft.WinGet/Package
-  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
-  properties:
-    id: "Google.AntigravityIDE"
-    source: "winget"
 - name: winget_Microsoft.Edit
   type: Microsoft.WinGet/Package
   dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
