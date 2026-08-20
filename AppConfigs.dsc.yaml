@@ -9,7 +9,12 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\Code\User" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\vscode\settings.json" -Destination "C:\Users\tema\AppData\Roaming\Code\User\settings.json" -Force'
+      - |
+        New-Item -ItemType Directory -Force -Path "~\AppData\Roaming\Code\User"
+        Copy-Item `
+            -LiteralPath "C:\code\DSC-profile\configs\vscode\settings.json" `
+            -Destination "~\AppData\Roaming\Code\User\settings.json" `
+            -Force
 - name: VsCodeKeybindings
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -19,7 +24,12 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\Code\User" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\vscode\keybindings.json" -Destination "C:\Users\tema\AppData\Roaming\Code\User\keybindings.json" -Force'
+      - |
+        New-Item -ItemType Directory -Force -Path "~\AppData\Roaming\Code\User"
+        Copy-Item `
+            -LiteralPath "C:\code\DSC-profile\configs\vscode\keybindings.json" `
+            -Destination "~\AppData\Roaming\Code\User\keybindings.json" `
+            -Force
 - name: VsCodeExtensions
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -39,7 +49,12 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\GitHub CLI" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\gh\config.yml" -Destination "C:\Users\tema\AppData\Roaming\GitHub CLI\config.yml" -Force'
+      - |
+        New-Item -ItemType Directory -Force -Path "~\AppData\Roaming\GitHub CLI"
+        Copy-Item `
+            -LiteralPath "C:\code\DSC-profile\configs\gh\config.yml" `
+            -Destination "~\AppData\Roaming\GitHub CLI\config.yml" `
+            -Force
 - name: GitConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -49,7 +64,11 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'Copy-Item -LiteralPath "C:\code\DSC-profile\configs\git\.gitconfig" -Destination "C:\Users\tema\.gitconfig" -Force'
+      - |
+        Copy-Item `
+            -LiteralPath "C:\code\DSC-profile\configs\git\.gitconfig" `
+            -Destination "~\.gitconfig" `
+            -Force
 - name: WindowsTerminalSettings
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -59,7 +78,16 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'Copy-Item -LiteralPath "C:\code\DSC-profile\configs\windowsterminal\settings.json" -Destination "C:\Users\tema\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Force; New-Item -ItemType Directory -Force -Path "C:\assets\icons" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\visual_assets\icons\Ubuntu.ico" -Destination "C:\assets\icons\Ubuntu.ico" -Force'
+      - |
+        Copy-Item `
+            -LiteralPath "C:\code\DSC-profile\configs\windowsterminal\settings.json" `
+            -Destination "~\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" `
+            -Force
+        New-Item -ItemType Directory -Force -Path "C:\assets\icons"
+        Copy-Item `
+            -LiteralPath "C:\code\DSC-profile\visual_assets\icons\Ubuntu.ico" `
+            -Destination "C:\assets\icons\Ubuntu.ico" `
+            -Force
 - name: KeePassXCConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -69,7 +97,12 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\KeePassXC" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\keepassxc\keepassxc.ini" -Destination "C:\Users\tema\AppData\Roaming\KeePassXC\keepassxc.ini" -Force'
+      - |
+        New-Item -ItemType Directory -Force -Path "~\AppData\Roaming\KeePassXC"
+        Copy-Item `
+            -LiteralPath "C:\code\DSC-profile\configs\keepassxc\keepassxc.ini" `
+            -Destination "~\AppData\Roaming\KeePassXC\keepassxc.ini" `
+            -Force
 - name: DBeaverOneDriveLink
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -89,7 +122,18 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\Far Manager\Profile" | Out-Null; Copy-Item -Path "C:\code\DSC-profile\configs\farmanager\*.db" -Exclude "localconfig.db" -Destination "C:\Users\tema\AppData\Roaming\Far Manager\Profile\" -Force; New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Local\Far Manager\Profile" | Out-Null; Copy-Item -Path "C:\code\DSC-profile\configs\farmanager\localconfig.db" -Destination "C:\Users\tema\AppData\Local\Far Manager\Profile\" -Force'
+      - |
+        New-Item -ItemType Directory -Force -Path "~\AppData\Roaming\Far Manager\Profile"
+        Copy-Item `
+            -Path "C:\code\DSC-profile\configs\farmanager\*.db" `
+            -Exclude "localconfig.db" `
+            -Destination "~\AppData\Roaming\Far Manager\Profile\" `
+            -Force
+        New-Item -ItemType Directory -Force -Path "~\AppData\Local\Far Manager\Profile"
+        Copy-Item `
+            -Path "C:\code\DSC-profile\configs\farmanager\localconfig.db" `
+            -Destination "~\AppData\Local\Far Manager\Profile\" `
+            -Force
 - name: SshConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -99,7 +143,9 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\.ssh" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\ssh\config" -Destination "C:\Users\tema\.ssh\config" -Force'
+      - |
+        New-Item -ItemType Directory -Force -Path "~\.ssh"
+        Copy-Item -LiteralPath "C:\code\DSC-profile\configs\ssh\config" -Destination "~\.ssh\config" -Force
 - name: PowerShellModules
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -129,7 +175,13 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'if (Test-Path "C:\code\powershell-profile\.git") { git -C "C:\code\powershell-profile" pull --ff-only } else { git clone https://github.com/kkthxbye/powershell-profile.git "C:\code\powershell-profile" }; pwsh -NoLogo -NonInteractive -NoProfile -File "C:\code\powershell-profile\Install-Profile.ps1"'
+      - |
+        if (Test-Path "C:\code\powershell-profile\.git") {
+            git -C "C:\code\powershell-profile" pull --ff-only
+        } else {
+            git clone https://github.com/kkthxbye/powershell-profile.git "C:\code\powershell-profile"
+        }
+        pwsh -NoLogo -NonInteractive -NoProfile -File "C:\code\powershell-profile\Install-Profile.ps1"
 - name: OhMyPoshTheme
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -139,7 +191,17 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'if (Test-Path "C:\code\oh-my-posh-theme\.git") { git -C "C:\code\oh-my-posh-theme" pull --ff-only } else { git clone https://github.com/kkthxbye/oh-my-posh-theme.git "C:\code\oh-my-posh-theme" }; New-Item -ItemType Directory -Force -Path "C:\Users\tema\.poshthemes" | Out-Null; Copy-Item -LiteralPath "C:\code\oh-my-posh-theme\kkthxbye.omp.json" -Destination "C:\Users\tema\.poshthemes\kkthxbye.omp.json" -Force'
+      - |
+        if (Test-Path "C:\code\oh-my-posh-theme\.git") {
+            git -C "C:\code\oh-my-posh-theme" pull --ff-only
+        } else {
+            git clone https://github.com/kkthxbye/oh-my-posh-theme.git "C:\code\oh-my-posh-theme"
+        }
+        New-Item -ItemType Directory -Force -Path "~\.poshthemes"
+        Copy-Item `
+            -LiteralPath "C:\code\oh-my-posh-theme\kkthxbye.omp.json" `
+            -Destination "~\.poshthemes\kkthxbye.omp.json" `
+            -Force
 - name: ThunderbirdFluentBird
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -159,7 +221,11 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'Copy-Item -LiteralPath "C:\code\DSC-profile\configs\thunderbird\user.js" -Destination "C:\Users\tema\AppData\Roaming\Thunderbird\Profiles\emfpltxq.default-release\user.js" -Force'
+      - |
+        Copy-Item `
+            -LiteralPath "C:\code\DSC-profile\configs\thunderbird\user.js" `
+            -Destination "~\AppData\Roaming\Thunderbird\Profiles\emfpltxq.default-release\user.js" `
+            -Force
 - name: ConsolasNFFont
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
