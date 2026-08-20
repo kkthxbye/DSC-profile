@@ -3,9 +3,9 @@
 DSC v3
 
 ```
-dsc config set -f .\DevWorkstation.dsc.yaml
-dsc config set -f .\Software.winget.dsc.yaml
-dsc config set -f .\AppConfigs.dsc.yaml
+dsc --trace-level trace --trace-format plaintext config set --file .\DevWorkstation.dsc.yaml
+dsc --trace-level trace --trace-format plaintext config set --file .\Software.winget.dsc.yaml
+dsc --trace-level trace --trace-format plaintext config set --file .\AppConfigs.dsc.yaml
 ```
 
-`dsc config test -f <file>` runs the same thing read-only, reporting drift without applying.
+`dsc config test --file <file>` runs the same thing read-only, reporting drift without applying.
