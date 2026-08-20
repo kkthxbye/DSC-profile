@@ -90,6 +90,16 @@ resources:
       - -NoProfile
       - -Command
       - 'Install-Module -Name PSFzf, powershell-yaml -Scope CurrentUser -Force -AllowClobber'
+- name: UvTools
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - '@("sqlfluff") | ForEach-Object { uv tool install $_ }'
 - name: PowerShellProfile
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
