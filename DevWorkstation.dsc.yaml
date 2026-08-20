@@ -180,6 +180,41 @@ resources:
     valueName: LockScreenImageStatus
     valueData:
       DWord: 1
+- name: LockScreenWidgetsEnabled
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Lock Screen
+    valueName: LockScreenWidgetsEnabled
+    valueData:
+      DWord: 1
+- name: LockScreenWidgetsSystemCurationEnabled
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Lock Screen
+    valueName: LockScreenWidgetsSystemCurationEnabled
+    valueData:
+      DWord: 0
+- name: LockScreenSlideshowEnabled
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Lock Screen
+    valueName: SlideshowEnabled
+    valueData:
+      DWord: 0
+- name: LockScreenSpotlightEnabled
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
+    valueName: RotatingLockScreenEnabled
+    valueData:
+      DWord: 0
+- name: LockScreenSpotlightTipsEnabled
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
+    valueName: RotatingLockScreenOverlayEnabled
+    valueData:
+      DWord: 0
 - name: DefenderRunning
   type: Microsoft.Windows/Service
   properties:
