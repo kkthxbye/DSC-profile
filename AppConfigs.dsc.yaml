@@ -59,7 +59,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'Copy-Item -LiteralPath "C:\code\DSC-profile\configs\windowsterminal\settings.json" -Destination "C:\Users\tema\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Force'
+      - 'Copy-Item -LiteralPath "C:\code\DSC-profile\configs\windowsterminal\settings.json" -Destination "C:\Users\tema\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Force; New-Item -ItemType Directory -Force -Path "C:\assets\icons" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\visual_assets\icons\Ubuntu.ico" -Destination "C:\assets\icons\Ubuntu.ico" -Force'
 - name: KeePassXCConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:

@@ -148,13 +148,23 @@ resources:
     valueName: DITest
     valueData:
       DWord: 0
+- name: WallpaperAssetFile
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'New-Item -ItemType Directory -Force -Path "C:\assets\wallpapers" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\visual_assets\wallpapers\wallpaper.jpg" -Destination "C:\assets\wallpapers\wallpaper.jpg" -Force'
 - name: DesktopWallpaperPath
   type: Microsoft.Windows/Registry
   properties:
     keyPath: HKCU\Control Panel\Desktop
     valueName: WallPaper
     valueData:
-      String: C:\code\DSC-profile\configs\wallpaper\wallpaper.jpg
+      String: C:\assets\wallpapers\wallpaper.jpg
 - name: DesktopWallpaperStyle
   type: Microsoft.Windows/Registry
   properties:
@@ -169,20 +179,30 @@ resources:
     valueName: TileWallpaper
     valueData:
       String: "0"
+- name: LockScreenAssetFile
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'New-Item -ItemType Directory -Force -Path "C:\assets\lockscreens" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\visual_assets\lockscreens\lockscreen.jpg" -Destination "C:\assets\lockscreens\lockscreen.jpg" -Force'
 - name: LockScreenImagePath
   type: Microsoft.Windows/Registry
   properties:
     keyPath: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP
     valueName: LockScreenImagePath
     valueData:
-      String: C:\code\DSC-profile\configs\wallpaper\lockscreen.jpg
+      String: C:\assets\lockscreens\lockscreen.jpg
 - name: LockScreenImageUrl
   type: Microsoft.Windows/Registry
   properties:
     keyPath: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP
     valueName: LockScreenImageUrl
     valueData:
-      String: C:\code\DSC-profile\configs\wallpaper\lockscreen.jpg
+      String: C:\assets\lockscreens\lockscreen.jpg
 - name: LockScreenImageStatus
   type: Microsoft.Windows/Registry
   properties:
