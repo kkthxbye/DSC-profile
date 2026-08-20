@@ -190,6 +190,16 @@ resources:
     valueName: LockScreenImageStatus
     valueData:
       DWord: 1
+- name: LockScreenImage
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -File
+      - 'C:\code\DSC-profile\configs\wallpaper\Set-LockScreenImage.ps1'
 - name: LockScreenWidgetsEnabled
   type: Microsoft.Windows/Registry
   properties:
