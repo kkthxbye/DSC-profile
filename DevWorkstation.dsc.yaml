@@ -17,6 +17,16 @@ resources:
       - -NoProfile
       - -Command
       - 'New-Item -ItemType Directory -Force -Path "C:\code" | Out-Null'
+- name: UserLanguageList
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - '$list = New-WinUserLanguageList -Language en-US; $list.Add((New-WinUserLanguageList -Language pl)[0]); $list.Add((New-WinUserLanguageList -Language ru)[0]); Set-WinUserLanguageList -LanguageList $list -Force'
 - name: ShowKnownFileExtensions
   type: Microsoft.Windows/Registry
   properties:
