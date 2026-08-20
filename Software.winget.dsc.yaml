@@ -269,12 +269,6 @@ resources:
   properties:
     id: "Rustlang.Rustup"
     source: "winget"
-- name: winget_Ollama.Ollama
-  type: Microsoft.WinGet/Package
-  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
-  properties:
-    id: "Ollama.Ollama"
-    source: "winget"
 - name: winget_Yarn.Yarn
   type: Microsoft.WinGet/Package
   dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
