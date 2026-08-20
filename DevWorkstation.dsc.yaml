@@ -157,7 +157,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path "C:\assets\wallpapers" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\wallpaper\wallpaper.jpg" -Destination "C:\assets\wallpapers\wallpaper.jpg" -Force'
+      - 'New-Item -ItemType Directory -Force -Path "C:\assets\wallpapers" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\visual_assets\wallpapers\wallpaper.jpg" -Destination "C:\assets\wallpapers\wallpaper.jpg" -Force'
 - name: DesktopWallpaperPath
   type: Microsoft.Windows/Registry
   properties:
@@ -188,7 +188,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path "C:\assets\lockscreens" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\wallpaper\lockscreen.jpg" -Destination "C:\assets\lockscreens\lockscreen.jpg" -Force'
+      - 'New-Item -ItemType Directory -Force -Path "C:\assets\lockscreens" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\visual_assets\lockscreens\lockscreen.jpg" -Destination "C:\assets\lockscreens\lockscreen.jpg" -Force'
 - name: LockScreenImagePath
   type: Microsoft.Windows/Registry
   properties:
