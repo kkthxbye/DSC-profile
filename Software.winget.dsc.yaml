@@ -221,12 +221,6 @@ resources:
   properties:
     id: "Microsoft.Edit"
     source: "winget"
-- name: winget_ZedIndustries.Zed
-  type: Microsoft.WinGet/Package
-  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
-  properties:
-    id: "ZedIndustries.Zed"
-    source: "winget"
 - name: winget_Docker.DockerCLI
   type: Microsoft.WinGet/Package
   dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
