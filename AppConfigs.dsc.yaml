@@ -20,6 +20,16 @@ resources:
       - -NoProfile
       - -Command
       - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\Code\User" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\vscode\keybindings.json" -Destination "C:\Users\tema\AppData\Roaming\Code\User\keybindings.json" -Force'
+- name: VsCodeExtensions
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -File
+      - 'C:\code\DSC-profile\configs\vscode\Install-Extensions.ps1'
 - name: GhConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
