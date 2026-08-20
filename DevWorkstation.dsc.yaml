@@ -72,6 +72,44 @@ resources:
     valueName: ConsentPromptBehaviorAdmin
     valueData:
       DWord: 0
+- name: DeveloperMode
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock
+    valueName: AllowDevelopmentWithoutDevLicense
+    valueData:
+      DWord: 1
+- name: PowerShellExecutionPolicy
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine -Force'
+- name: TaskbarEndTask
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    valueName: TaskbarEndTask
+    valueData:
+      DWord: 0
+- name: DefaultTerminalConsole
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Console\%%Startup
+    valueName: DelegationConsole
+    valueData:
+      String: "{00000000-0000-0000-0000-000000000000}"
+- name: DefaultTerminalApp
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Console\%%Startup
+    valueName: DelegationTerminal
+    valueData:
+      String: "{00000000-0000-0000-0000-000000000000}"
 - name: SnapWindows
   type: Microsoft.Windows/Registry
   properties:
