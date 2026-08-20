@@ -203,12 +203,6 @@ resources:
   properties:
     id: "SlackTechnologies.Slack"
     source: "winget"
-- name: winget_Zoom.Zoom
-  type: Microsoft.WinGet/Package
-  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
-  properties:
-    id: "Zoom.Zoom"
-    source: "winget"
 - name: winget_Google.PlatformTools
   type: Microsoft.WinGet/Package
   dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
