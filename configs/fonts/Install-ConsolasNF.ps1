@@ -1,12 +1,12 @@
 $fontUrls = @(
-    'https://raw.githubusercontent.com/ongyx/consolas-nf/master/ConsolasNerdFontMono-Regular.ttf'
-    'https://raw.githubusercontent.com/ongyx/consolas-nf/master/ConsolasNerdFontMono-Bold.ttf'
-    'https://raw.githubusercontent.com/ongyx/consolas-nf/master/ConsolasNerdFontMono-Italic.ttf'
-    'https://raw.githubusercontent.com/ongyx/consolas-nf/master/ConsolasNerdFontMono-BoldItalic.ttf'
+    'https://raw.githubusercontent.com/wclr/my-nerd-fonts/master/Consolas%20NF/Consolas%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf'
+    'https://raw.githubusercontent.com/wclr/my-nerd-fonts/master/Consolas%20NF/Consolas%20Bold%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf'
+    'https://raw.githubusercontent.com/wclr/my-nerd-fonts/master/Consolas%20NF/Consolas%20Italic%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf'
+    'https://raw.githubusercontent.com/wclr/my-nerd-fonts/master/Consolas%20NF/Consolas%20Bold%20Italic%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf'
 )
 
 $destDir = "$env:LOCALAPPDATA\Microsoft\Windows\Fonts"
-$pending = $fontUrls | Where-Object { -not (Test-Path (Join-Path $destDir (Split-Path $_ -Leaf))) }
+$pending = $fontUrls | Where-Object { -not (Test-Path (Join-Path $destDir ([System.Uri]::UnescapeDataString((Split-Path $_ -Leaf))))) }
 
 if (-not $pending) {
     Write-Host "Consolas NF already installed."
@@ -22,7 +22,7 @@ try {
     $fontsFolder = (New-Object -ComObject Shell.Application).Namespace(0x14)
 
     foreach ($url in $pending) {
-        $fileName = Split-Path $url -Leaf
+        $fileName = [System.Uri]::UnescapeDataString((Split-Path $url -Leaf))
         $dest = Join-Path $tempDir $fileName
         Invoke-WebRequest -Uri $url -OutFile $dest -UseBasicParsing
         $fontsFolder.CopyHere($dest)
