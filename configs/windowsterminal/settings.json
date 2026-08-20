@@ -384,7 +384,6 @@
             {
                 "guid": "{ccf8cef0-e999-549f-91b6-2d413355e486}",
                 "hidden": false,
-                "icon": "C:\\tools\\bash.ico",
                 "name": "Ubuntu-24.04",
                 "source": "Microsoft.WSL"
             },
@@ -394,7 +393,13 @@
                 "hidden": false,
                 "icon": "C:\\tools\\bash.ico",
                 "name": "kkthxbye-work (Ubuntu)"
-            }
+            },
+            {
+                "guid": "{12243491-8fae-578a-8ed9-83f0ffd674d8}",
+                "hidden": false,
+                "name": "Ubuntu-26.04",
+                "source": "Microsoft.WSL"
+            },
         ]
     },
     "schemes": [],
