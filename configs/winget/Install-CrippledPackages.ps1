@@ -1,7 +1,8 @@
 $ErrorActionPreference = "Stop"
 
 $CrippledPackages = @(
-    "mitmproxy.mitmproxy"
+    "mitmproxy.mitmproxy",
+    "Microsoft.Sysinternals.Suite"
 )
 
 foreach ($id in $CrippledPackages) {

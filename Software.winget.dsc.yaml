@@ -107,12 +107,6 @@ resources:
   properties:
     id: "KeePassXCTeam.KeePassXC"
     source: "winget"
-- name: winget_Microsoft.Sysinternals.Suite
-  type: Microsoft.WinGet/Package
-  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
-  properties:
-    id: "Microsoft.Sysinternals.Suite"
-    source: "winget"
 - name: winget_LibreHardwareMonitor.LibreHardwareMonitor
   type: Microsoft.WinGet/Package
   dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
