@@ -58,11 +58,18 @@ resources:
     valueName: LongPathsEnabled
     valueData:
       DWord: 1
-- name: DisableUAC
+- name: EnableUAC
   type: Microsoft.Windows/Registry
   properties:
     keyPath: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
     valueName: EnableLUA
+    valueData:
+      DWord: 1
+- name: UACSilentElevation
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+    valueName: ConsentPromptBehaviorAdmin
     valueData:
       DWord: 0
 - name: DesktopWallpaperPath
