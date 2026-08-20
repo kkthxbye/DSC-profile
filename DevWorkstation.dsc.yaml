@@ -190,6 +190,13 @@ resources:
     valueName: LockScreenImageStatus
     valueData:
       DWord: 1
+- name: LockScreenImagePolicy
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKLM\SOFTWARE\Policies\Microsoft\Windows\Personalization
+    valueName: LockScreenImage
+    valueData:
+      String: C:\code\DSC-profile\configs\wallpaper\lockscreen.jpg
 - name: LockScreenWidgetsEnabled
   type: Microsoft.Windows/Registry
   properties:
