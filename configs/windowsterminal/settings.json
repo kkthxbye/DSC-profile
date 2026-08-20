@@ -401,7 +401,7 @@
                 "commandline": "ssh kkthxbye-work-wsl-native",
                 "guid": "{0de89723-dc71-4b1c-ad08-b07338298978}",
                 "hidden": false,
-                "icon": "C:\\tools\\bash.ico",
+                "icon": "C:\\assets\\icons\\Ubuntu.ico",
                 "name": "kkthxbye-work (Ubuntu)"
             },
             {

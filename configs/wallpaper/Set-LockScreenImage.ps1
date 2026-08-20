@@ -1,4 +1,4 @@
-$imagePath = "C:\code\DSC-profile\configs\wallpaper\lockscreen.jpg"
+$imagePath = "C:\assets\lockscreens\lockscreen.jpg"
 
 if ($PSVersionTable.PSEdition -ne 'Desktop') {
     powershell.exe -NoLogo -NonInteractive -NoProfile -File $PSCommandPath
