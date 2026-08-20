@@ -389,3 +389,9 @@ resources:
   properties:
     id: "Mozilla.Thunderbird"
     source: "winget"
+- name: winget_Perimeter81.HarmonySASE
+  type: Microsoft.WinGet/Package
+  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
+  properties:
+    id: "Perimeter81.HarmonySASE"
+    source: "winget"
