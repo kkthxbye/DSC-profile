@@ -76,6 +76,27 @@ resources:
         Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sTimeFormat -Value "HH:mm:ss"
         Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name iTime -Value "1"
         Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name iTLZero -Value "1"
+- name: AdditionalClockUTCEnabled
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Control Panel\TimeDate\AdditionalClocks\1
+    valueName: Enable
+    valueData:
+      DWord: 1
+- name: AdditionalClockUTCTimeZone
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Control Panel\TimeDate\AdditionalClocks\1
+    valueName: TzRegKeyName
+    valueData:
+      String: UTC
+- name: AdditionalClockUTCDisplayName
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Control Panel\TimeDate\AdditionalClocks\1
+    valueName: DisplayName
+    valueData:
+      String: UTC
 - name: ShowKnownFileExtensions
   type: Microsoft.Windows/Registry
   properties:

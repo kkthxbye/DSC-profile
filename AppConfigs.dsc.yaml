@@ -166,6 +166,22 @@ resources:
       - -NoProfile
       - -Command
       - '@("sqlfluff") | ForEach-Object { uv tool install $_ }'
+- name: UvToolsOnUserPath
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - |
+        $dir = "$env:USERPROFILE\.local\bin"
+        $userPath = [System.Environment]::GetEnvironmentVariable("Path", "User")
+        $parts = @($userPath -split ";" | Where-Object { $_ })
+        if ($parts -notcontains $dir) {
+            [System.Environment]::SetEnvironmentVariable("Path", (($parts + $dir) -join ";"), "User")
+        }
 - name: PowerShellProfile
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
