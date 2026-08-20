@@ -165,14 +165,14 @@ resources:
     keyPath: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP
     valueName: LockScreenImagePath
     valueData:
-      String: C:\code\DSC-profile\configs\wallpaper\wallpaper.jpg
+      String: C:\code\DSC-profile\configs\wallpaper\lockscreen.jpg
 - name: LockScreenImageUrl
   type: Microsoft.Windows/Registry
   properties:
     keyPath: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP
     valueName: LockScreenImageUrl
     valueData:
-      String: C:\code\DSC-profile\configs\wallpaper\wallpaper.jpg
+      String: C:\code\DSC-profile\configs\wallpaper\lockscreen.jpg
 - name: LockScreenImageStatus
   type: Microsoft.Windows/Registry
   properties:
