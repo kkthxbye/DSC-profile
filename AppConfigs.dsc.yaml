@@ -69,7 +69,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\Documents\PowerShell" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\powershell\Microsoft.PowerShell_profile.ps1" -Destination "C:\Users\tema\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force'
+      - 'if (Test-Path "C:\code\powershell-profile\.git") { git -C "C:\code\powershell-profile" pull --ff-only } else { git clone https://github.com/kkthxbye/powershell-profile.git "C:\code\powershell-profile" }; pwsh -NoLogo -NonInteractive -NoProfile -File "C:\code\powershell-profile\Install-Profile.ps1"'
 - name: ThunderbirdFluentBird
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
