@@ -365,9 +365,3 @@ resources:
   properties:
     id: "Perimeter81.HarmonySASE"
     source: "winget"
-- name: winget_Spotify.Spotify
-  type: Microsoft.WinGet/Package
-  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
-  properties:
-    id: "Spotify.Spotify"
-    source: "winget"
