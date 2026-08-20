@@ -90,3 +90,23 @@ resources:
       - -NoProfile
       - -File
       - 'C:\code\DSC-profile\configs\fonts\Install-ConsolasNF.ps1'
+- name: WslUbuntu
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -File
+      - 'C:\code\DSC-profile\configs\wsl\Install-Ubuntu.ps1'
+- name: WslAnsiblePlaybook
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -File
+      - 'C:\code\DSC-profile\configs\wsl\Invoke-AnsiblePlaybook.ps1'
