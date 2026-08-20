@@ -4,7 +4,8 @@ DSC v3
 
 ```
 dsc --trace-level trace --trace-format plaintext config set --file .\DevWorkstation.dsc.yaml
-.\Install-Software.ps1
+dsc --trace-level trace --trace-format plaintext config set --file .\Software.winget.dsc.yaml
+.\configs\winget\Install-CrippledPackages.ps1
 dsc --trace-level trace --trace-format plaintext config set --file .\AppConfigs.dsc.yaml
 ```
 
