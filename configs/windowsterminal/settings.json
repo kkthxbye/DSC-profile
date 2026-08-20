@@ -356,7 +356,7 @@
             "font":
             {
                 "builtinGlyphs": false,
-                "face": "Consolas NF",
+                "face": "Consolas Nerd Font Mono",
                 "size": 11
             },
             "opacity": 90,
