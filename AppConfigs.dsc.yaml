@@ -70,6 +70,16 @@ resources:
       - -NoProfile
       - -Command
       - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\KeePassXC" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\keepassxc\keepassxc.ini" -Destination "C:\Users\tema\AppData\Roaming\KeePassXC\keepassxc.ini" -Force'
+- name: FarManagerConfig
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\Far Manager\Profile" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\configs\farmanager\*.db" -Destination "C:\Users\tema\AppData\Roaming\Far Manager\Profile\" -Force'
 - name: SshConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
