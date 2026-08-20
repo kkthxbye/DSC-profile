@@ -80,6 +80,16 @@ resources:
       - -NoProfile
       - -Command
       - 'if (Test-Path "C:\code\powershell-profile\.git") { git -C "C:\code\powershell-profile" pull --ff-only } else { git clone https://github.com/kkthxbye/powershell-profile.git "C:\code\powershell-profile" }; pwsh -NoLogo -NonInteractive -NoProfile -File "C:\code\powershell-profile\Install-Profile.ps1"'
+- name: OhMyPoshTheme
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'if (Test-Path "C:\code\oh-my-posh-theme\.git") { git -C "C:\code\oh-my-posh-theme" pull --ff-only } else { git clone https://github.com/kkthxbye/oh-my-posh-theme.git "C:\code\oh-my-posh-theme" }; New-Item -ItemType Directory -Force -Path "C:\Users\tema\.poshthemes" | Out-Null; Copy-Item -LiteralPath "C:\code\oh-my-posh-theme\kkthxbye.omp.json" -Destination "C:\Users\tema\.poshthemes\kkthxbye.omp.json" -Force'
 - name: ThunderbirdFluentBird
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
