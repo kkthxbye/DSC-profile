@@ -131,6 +131,12 @@ resources:
   properties:
     id: "Casey.Just"
     source: "winget"
+- name: winget_Atuinsh.Atuin
+  type: Microsoft.WinGet/Package
+  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
+  properties:
+    id: "Atuinsh.Atuin"
+    source: "winget"
 - name: winget_Clement.bottom
   type: Microsoft.WinGet/Package
   dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
