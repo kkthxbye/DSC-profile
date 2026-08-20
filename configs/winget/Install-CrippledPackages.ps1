@@ -1,5 +1,7 @@
 $ErrorActionPreference = "Stop"
 
+winget settings --enable InstallerHashOverride
+
 $CrippledPackages = @(
     "mitmproxy.mitmproxy",
     "Microsoft.Sysinternals.Suite"
