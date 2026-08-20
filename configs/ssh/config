@@ -1,0 +1,14 @@
+Host kkthxbye-work-wsl-native
+    HostName kkthxbye-work.local
+    Port 8022
+    User tema
+    RequestTTY yes
+    RemoteCommand pwsh -nologo
+    AddressFamily inet
+
+Host kkthxbye-work-wsl-native-zsh
+    HostName kkthxbye-work.local
+    Port 8022
+    User tema
+    RequestTTY yes
+    AddressFamily inet
