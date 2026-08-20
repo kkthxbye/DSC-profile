@@ -17,8 +17,6 @@ $tempDir = Join-Path $env:TEMP "consolas-nf-$(Get-Random)"
 New-Item -ItemType Directory -Force -Path $tempDir | Out-Null
 
 try {
-    # The Fonts shell folder's CopyHere verb installs per-user (no admin) on
-    # Windows 10 1809+ and writes the HKCU font registry entry for us.
     $fontsFolder = (New-Object -ComObject Shell.Application).Namespace(0x14)
 
     foreach ($url in $pending) {
