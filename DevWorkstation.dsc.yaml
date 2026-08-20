@@ -189,27 +189,6 @@ resources:
       - -NoProfile
       - -Command
       - 'New-Item -ItemType Directory -Force -Path "C:\assets\lockscreens" | Out-Null; Copy-Item -LiteralPath "C:\code\DSC-profile\visual_assets\lockscreens\lockscreen.jpg" -Destination "C:\assets\lockscreens\lockscreen.jpg" -Force'
-- name: LockScreenImagePath
-  type: Microsoft.Windows/Registry
-  properties:
-    keyPath: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP
-    valueName: LockScreenImagePath
-    valueData:
-      String: C:\assets\lockscreens\lockscreen.jpg
-- name: LockScreenImageUrl
-  type: Microsoft.Windows/Registry
-  properties:
-    keyPath: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP
-    valueName: LockScreenImageUrl
-    valueData:
-      String: C:\assets\lockscreens\lockscreen.jpg
-- name: LockScreenImageStatus
-  type: Microsoft.Windows/Registry
-  properties:
-    keyPath: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP
-    valueName: LockScreenImageStatus
-    valueData:
-      DWord: 1
 - name: LockScreenImage
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
