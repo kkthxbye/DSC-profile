@@ -89,7 +89,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\Far Manager\Profile" | Out-Null; Copy-Item -Path "C:\code\DSC-profile\configs\farmanager\*.db" -Destination "C:\Users\tema\AppData\Roaming\Far Manager\Profile\" -Force'
+      - 'New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Roaming\Far Manager\Profile" | Out-Null; Copy-Item -Path "C:\code\DSC-profile\configs\farmanager\*.db" -Exclude "localconfig.db" -Destination "C:\Users\tema\AppData\Roaming\Far Manager\Profile\" -Force; New-Item -ItemType Directory -Force -Path "C:\Users\tema\AppData\Local\Far Manager\Profile" | Out-Null; Copy-Item -Path "C:\code\DSC-profile\configs\farmanager\localconfig.db" -Destination "C:\Users\tema\AppData\Local\Far Manager\Profile\" -Force'
 - name: SshConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
