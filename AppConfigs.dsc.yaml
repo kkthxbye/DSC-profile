@@ -113,6 +113,26 @@ resources:
       - -NoProfile
       - -File
       - 'C:\code\DSC-profile\configs\dbeaver\Set-OneDriveProfileLink.ps1'
+- name: KeePassOneDriveLink
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -File
+      - 'C:\code\DSC-profile\configs\keepassxc\Set-OneDriveVaultLink.ps1'
+- name: OneDriveKfmOptOut
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -File
+      - 'C:\code\DSC-profile\configs\onedrive\Set-KfmOptOut.ps1'
 - name: FarManagerConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:

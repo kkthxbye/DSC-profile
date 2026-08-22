@@ -36,15 +36,26 @@ foreach ($folder in $Folders) {
         $oneDriveStopped = $true
     }
 
-    New-Item -ItemType Directory -Force -Path $localPath | Out-Null
-    Get-ChildItem -LiteralPath $oneDrivePath -Force | Move-Item -Destination $localPath -Force
+    try {
+        New-Item -ItemType Directory -Force -Path $localPath
 
-    Set-ItemProperty -Path $ShellFolders -Name $folder.RegValue -Value $localPath
-    Set-ItemProperty -Path $ShellFoldersLegacy -Name $folder.RegValue -Value $localPath
+        Get-ChildItem -LiteralPath $oneDrivePath -File -Recurse -Force | ForEach-Object {
+            $relativePath = $_.FullName.Substring($oneDrivePath.Length).TrimStart('\')
+            $destinationFile = Join-Path $localPath $relativePath
+            New-Item -ItemType Directory -Force -Path (Split-Path $destinationFile)
+            Move-Item -LiteralPath $_.FullName -Destination $destinationFile -Force
+        }
 
-    Remove-Item -LiteralPath $oneDrivePath -Force -ErrorAction SilentlyContinue
+        Set-ItemProperty -Path $ShellFolders -Name $folder.RegValue -Value $localPath
+        Set-ItemProperty -Path $ShellFoldersLegacy -Name $folder.RegValue -Value $localPath
 
-    Write-Host "Un-redirected $($folder.Name): $oneDrivePath -> $localPath (kept on this PC)"
+        Remove-Item -LiteralPath $oneDrivePath -Force -ErrorAction SilentlyContinue
+
+        Write-Host "Un-redirected $($folder.Name): $oneDrivePath -> $localPath (kept on this PC)"
+    }
+    catch {
+        Write-Warning "Failed to un-redirect $($folder.Name): $_"
+    }
 }
 
 if ($oneDriveStopped) {
