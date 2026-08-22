@@ -392,24 +392,12 @@
                 "padding": "0, 0, 0, 0"
             },
             {
-                "guid": "{ccf8cef0-e999-549f-91b6-2d413355e486}",
-                "hidden": false,
-                "name": "Ubuntu-24.04",
-                "source": "Microsoft.WSL"
-            },
-            {
                 "commandline": "ssh kkthxbye-work-wsl-native",
                 "guid": "{0de89723-dc71-4b1c-ad08-b07338298978}",
                 "hidden": false,
                 "icon": "C:\\assets\\icons\\Ubuntu.ico",
                 "name": "kkthxbye-work (Ubuntu)"
-            },
-            {
-                "guid": "{12243491-8fae-578a-8ed9-83f0ffd674d8}",
-                "hidden": false,
-                "name": "Ubuntu-26.04",
-                "source": "Microsoft.WSL"
-            },
+            }
         ]
     },
     "schemes": [],
