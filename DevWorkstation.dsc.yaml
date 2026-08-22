@@ -306,3 +306,37 @@ resources:
     name: wuauserv
     status: Running
     startType: Automatic
+- name: SshdRunning
+  type: Microsoft.Windows/Service
+  properties:
+    name: sshd
+    status: Running
+    startType: Automatic
+- name: SshdDefaultShell
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKLM\SOFTWARE\OpenSSH
+    valueName: DefaultShell
+    valueData:
+      String: pwsh.exe
+- name: SshdDefaultShellCommandOption
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKLM\SOFTWARE\OpenSSH
+    valueName: DefaultShellCommandOption
+    valueData:
+      String: -Command
+- name: SshdDefaultShellEscapeArguments
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKLM\SOFTWARE\OpenSSH
+    valueName: DefaultShellEscapeArguments
+    valueData:
+      DWord: 1
+- name: SshdDefaultShellArguments
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKLM\SOFTWARE\OpenSSH
+    valueName: DefaultShellArguments
+    valueData:
+      String: -NoLogo -NoProfileLoadTime

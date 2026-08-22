@@ -3,7 +3,6 @@ Host kkthxbye-work-wsl-native
     Port 8022
     User tema
     RequestTTY yes
-    RemoteCommand pwsh -nologo
     AddressFamily inet
 
 Host kkthxbye-work-wsl-native-zsh
