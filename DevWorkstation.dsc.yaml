@@ -139,6 +139,13 @@ resources:
     valueName: AllowDevelopmentWithoutDevLicense
     valueData:
       DWord: 1
+- name: EnableAdministrativeShares
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters
+    valueName: AutoShareWks
+    valueData:
+      DWord: 1
 - name: PowerShellExecutionPolicy
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
