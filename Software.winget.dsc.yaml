@@ -377,3 +377,9 @@ resources:
   properties:
     id: "xM4ddy.OFGB"
     source: "winget"
+- name: winget_KDE.KDEConnect
+  type: Microsoft.WinGet/Package
+  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
+  properties:
+    id: "KDE.KDEConnect"
+    source: "winget"
