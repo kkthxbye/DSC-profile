@@ -87,12 +87,8 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -Command
-      - |
-        Copy-Item `
-            -LiteralPath "C:\code\DSC-profile\configs\windowsterminal\settings.json" `
-            -Destination "~\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" `
-            -Force
+      - -File
+      - 'C:\code\DSC-profile\configs\windowsterminal\Set-Settings.ps1'
 - name: KeePassXCConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
