@@ -272,7 +272,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\configs\fonts\Install-ConsolasNF.ps1'
+      - 'C:\code\DSC-profile\visual_assets\fonts\Install-ConsolasNF.ps1'
 - name: WslUbuntu
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
