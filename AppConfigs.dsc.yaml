@@ -176,7 +176,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'Install-Module -Name PSFzf, powershell-yaml, Microsoft.WinGet.Client -Scope CurrentUser -Force -AllowClobber'
+      - 'Install-Module -Name PSFzf, powershell-yaml, Microsoft.WinGet.Client, CompletionPredictor -Scope CurrentUser -Force -AllowClobber'
 - name: UvTools
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
