@@ -12,7 +12,7 @@ resources:
       - |
         New-Item -ItemType Directory -Force -Path "~\AppData\Roaming\Code\User"
         Copy-Item `
-            -LiteralPath ".\configs\vscode\settings.json" `
+            -LiteralPath "$env:DSC_CONFIG_ROOT\configs\vscode\settings.json" `
             -Destination "~\AppData\Roaming\Code\User\settings.json" `
             -Force
 - name: VsCodeKeybindings
@@ -27,7 +27,7 @@ resources:
       - |
         New-Item -ItemType Directory -Force -Path "~\AppData\Roaming\Code\User"
         Copy-Item `
-            -LiteralPath ".\configs\vscode\keybindings.json" `
+            -LiteralPath "$env:DSC_CONFIG_ROOT\configs\vscode\keybindings.json" `
             -Destination "~\AppData\Roaming\Code\User\keybindings.json" `
             -Force
 - name: VsCodeExtensions
@@ -38,8 +38,8 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -File
-      - '.\scripts\vscode\Install-Extensions.ps1'
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\scripts\vscode\Install-Extensions.ps1"'
 - name: GhConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -52,7 +52,7 @@ resources:
       - |
         New-Item -ItemType Directory -Force -Path "~\AppData\Roaming\GitHub CLI"
         Copy-Item `
-            -LiteralPath ".\configs\gh\config.yml" `
+            -LiteralPath "$env:DSC_CONFIG_ROOT\configs\gh\config.yml" `
             -Destination "~\AppData\Roaming\GitHub CLI\config.yml" `
             -Force
 - name: GitConfig
@@ -66,7 +66,7 @@ resources:
       - -Command
       - |
         Copy-Item `
-            -LiteralPath ".\configs\git\.gitconfig" `
+            -LiteralPath "$env:DSC_CONFIG_ROOT\configs\git\.gitconfig" `
             -Destination "~\.gitconfig" `
             -Force
 - name: GhSshSigningKey
@@ -77,8 +77,8 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -File
-      - '.\scripts\gh\Register-SshSigningKey.ps1'
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\scripts\gh\Register-SshSigningKey.ps1"'
 - name: WindowsTerminalSettings
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -87,8 +87,8 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -File
-      - '.\scripts\windowsterminal\Set-Settings.ps1'
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\scripts\windowsterminal\Set-Settings.ps1"'
 - name: KeePassXCConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -101,7 +101,7 @@ resources:
       - |
         New-Item -ItemType Directory -Force -Path "~\AppData\Roaming\KeePassXC"
         Copy-Item `
-            -LiteralPath ".\configs\keepassxc\keepassxc.ini" `
+            -LiteralPath "$env:DSC_CONFIG_ROOT\configs\keepassxc\keepassxc.ini" `
             -Destination "~\AppData\Roaming\KeePassXC\keepassxc.ini" `
             -Force
 - name: DBeaverOneDriveLink
@@ -112,8 +112,8 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -File
-      - '.\scripts\dbeaver\Set-OneDriveProfileLink.ps1'
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\scripts\dbeaver\Set-OneDriveProfileLink.ps1"'
 - name: KeePassOneDriveLink
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -122,8 +122,8 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -File
-      - '.\scripts\keepassxc\Set-OneDriveVaultLink.ps1'
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\scripts\keepassxc\Set-OneDriveVaultLink.ps1"'
 - name: OneDriveKfmOptOut
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -132,8 +132,8 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -File
-      - '.\scripts\onedrive\Set-KfmOptOut.ps1'
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\scripts\onedrive\Set-KfmOptOut.ps1"'
 - name: FarManagerConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -146,13 +146,13 @@ resources:
       - |
         New-Item -ItemType Directory -Force -Path "~\AppData\Roaming\Far Manager\Profile"
         Copy-Item `
-            -Path ".\configs\farmanager\*.db" `
+            -Path "$env:DSC_CONFIG_ROOT\configs\farmanager\*.db" `
             -Exclude "localconfig.db" `
             -Destination "~\AppData\Roaming\Far Manager\Profile\" `
             -Force
         New-Item -ItemType Directory -Force -Path "~\AppData\Local\Far Manager\Profile"
         Copy-Item `
-            -Path ".\configs\farmanager\localconfig.db" `
+            -Path "$env:DSC_CONFIG_ROOT\configs\farmanager\localconfig.db" `
             -Destination "~\AppData\Local\Far Manager\Profile\" `
             -Force
 - name: SshConfig
@@ -166,7 +166,7 @@ resources:
       - -Command
       - |
         New-Item -ItemType Directory -Force -Path "~\.ssh"
-        Copy-Item -LiteralPath ".\configs\ssh\config" -Destination "~\.ssh\config" -Force
+        Copy-Item -LiteralPath "$env:DSC_CONFIG_ROOT\configs\ssh\config" -Destination "~\.ssh\config" -Force
 - name: PowerShellModules
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -213,12 +213,12 @@ resources:
       - -NoProfile
       - -Command
       - |
-        if (Test-Path "..\powershell-profile\.git") {
-            git -C "..\powershell-profile" pull --ff-only
+        if (Test-Path "$env:DSC_CONFIG_ROOT\..\powershell-profile\.git") {
+            git -C "$env:DSC_CONFIG_ROOT\..\powershell-profile" pull --ff-only
         } else {
-            git clone https://github.com/kkthxbye/powershell-profile.git "..\powershell-profile"
+            git clone https://github.com/kkthxbye/powershell-profile.git "$env:DSC_CONFIG_ROOT\..\powershell-profile"
         }
-        pwsh -NoLogo -NonInteractive -NoProfile -File "..\powershell-profile\Install-Profile.ps1"
+        pwsh -NoLogo -NonInteractive -NoProfile -File "$env:DSC_CONFIG_ROOT\..\powershell-profile\Install-Profile.ps1"
 - name: OhMyPoshTheme
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -229,14 +229,14 @@ resources:
       - -NoProfile
       - -Command
       - |
-        if (Test-Path "..\oh-my-posh-theme\.git") {
-            git -C "..\oh-my-posh-theme" pull --ff-only
+        if (Test-Path "$env:DSC_CONFIG_ROOT\..\oh-my-posh-theme\.git") {
+            git -C "$env:DSC_CONFIG_ROOT\..\oh-my-posh-theme" pull --ff-only
         } else {
-            git clone https://github.com/kkthxbye/oh-my-posh-theme.git "..\oh-my-posh-theme"
+            git clone https://github.com/kkthxbye/oh-my-posh-theme.git "$env:DSC_CONFIG_ROOT\..\oh-my-posh-theme"
         }
         New-Item -ItemType Directory -Force -Path "~\.poshthemes"
         Copy-Item `
-            -LiteralPath "..\oh-my-posh-theme\kkthxbye.omp.json" `
+            -LiteralPath "$env:DSC_CONFIG_ROOT\..\oh-my-posh-theme\kkthxbye.omp.json" `
             -Destination "~\.poshthemes\kkthxbye.omp.json" `
             -Force
 - name: ThunderbirdFluentBird
@@ -247,8 +247,8 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -File
-      - '.\scripts\thunderbird\Install-FluentBird.ps1'
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\scripts\thunderbird\Install-FluentBird.ps1"'
 - name: ThunderbirdUserPrefs
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -260,7 +260,7 @@ resources:
       - -Command
       - |
         Copy-Item `
-            -LiteralPath ".\configs\thunderbird\user.js" `
+            -LiteralPath "$env:DSC_CONFIG_ROOT\configs\thunderbird\user.js" `
             -Destination "~\AppData\Roaming\Thunderbird\Profiles\emfpltxq.default-release\user.js" `
             -Force
 - name: ConsolasNFFont
@@ -271,8 +271,8 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -File
-      - '.\visual_assets\fonts\Install-ConsolasNF.ps1'
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\visual_assets\fonts\Install-ConsolasNF.ps1"'
 - name: WslUbuntu
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -281,8 +281,8 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -File
-      - '.\scripts\wsl\Install-Ubuntu.ps1'
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\scripts\wsl\Install-Ubuntu.ps1"'
 - name: WslAnsiblePlaybook
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -291,5 +291,5 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -File
-      - '.\scripts\wsl\Invoke-AnsiblePlaybook.ps1'
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\scripts\wsl\Invoke-AnsiblePlaybook.ps1"'

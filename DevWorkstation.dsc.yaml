@@ -1,12 +1,5 @@
 $schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
 resources:
-- name: DscProfileHome
-  type: Microsoft.Windows/Registry
-  properties:
-    keyPath: HKCU\Environment
-    valueName: DSC_PROFILE_HOME
-    valueData:
-      String: C:\code\DSC-profile
 - name: CodeWorkspaceRoot
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -16,7 +9,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path ".."'
+      - 'New-Item -ItemType Directory -Force -Path "$env:DSC_CONFIG_ROOT\.."'
 - name: OperaOnUserPath
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -225,7 +218,7 @@ resources:
       - |
         New-Item -ItemType Directory -Force -Path "C:\assets\wallpapers"
         Copy-Item `
-            -LiteralPath ".\visual_assets\wallpapers\wallpaper.jpg" `
+            -LiteralPath "$env:DSC_CONFIG_ROOT\visual_assets\wallpapers\wallpaper.jpg" `
             -Destination "C:\assets\wallpapers\wallpaper.jpg" `
             -Force
 - name: DesktopWallpaperPath
@@ -261,7 +254,7 @@ resources:
       - |
         New-Item -ItemType Directory -Force -Path "C:\assets\lockscreens"
         Copy-Item `
-            -LiteralPath ".\visual_assets\lockscreens\lockscreen.jpg" `
+            -LiteralPath "$env:DSC_CONFIG_ROOT\visual_assets\lockscreens\lockscreen.jpg" `
             -Destination "C:\assets\lockscreens\lockscreen.jpg" `
             -Force
 - name: LockScreenImage
@@ -272,8 +265,8 @@ resources:
       - -NoLogo
       - -NonInteractive
       - -NoProfile
-      - -File
-      - '.\scripts\wallpaper\Set-LockScreenImage.ps1'
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\scripts\wallpaper\Set-LockScreenImage.ps1"'
 - name: LockScreenWidgetsEnabled
   type: Microsoft.Windows/Registry
   properties:
