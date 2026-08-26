@@ -170,7 +170,7 @@ resources:
     keyPath: HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
     valueName: TaskbarEndTask
     valueData:
-      DWord: 0
+      DWord: 1
 - name: DefaultTerminalConsole
   type: Microsoft.Windows/Registry
   properties:
