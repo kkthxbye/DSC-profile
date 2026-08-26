@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$RepoPath = "C:\code\DSC-profile\configs\windowsterminal\settings.json"
+$RepoPath = Join-Path $PSScriptRoot "..\..\configs\windowsterminal\settings.json"
 $LiveDir = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
 $LivePath = Join-Path $LiveDir "settings.json"
 

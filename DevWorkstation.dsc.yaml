@@ -16,7 +16,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'New-Item -ItemType Directory -Force -Path "C:\code"'
+      - 'New-Item -ItemType Directory -Force -Path ".."'
 - name: OperaOnUserPath
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -225,7 +225,7 @@ resources:
       - |
         New-Item -ItemType Directory -Force -Path "C:\assets\wallpapers"
         Copy-Item `
-            -LiteralPath "C:\code\DSC-profile\visual_assets\wallpapers\wallpaper.jpg" `
+            -LiteralPath ".\visual_assets\wallpapers\wallpaper.jpg" `
             -Destination "C:\assets\wallpapers\wallpaper.jpg" `
             -Force
 - name: DesktopWallpaperPath
@@ -261,7 +261,7 @@ resources:
       - |
         New-Item -ItemType Directory -Force -Path "C:\assets\lockscreens"
         Copy-Item `
-            -LiteralPath "C:\code\DSC-profile\visual_assets\lockscreens\lockscreen.jpg" `
+            -LiteralPath ".\visual_assets\lockscreens\lockscreen.jpg" `
             -Destination "C:\assets\lockscreens\lockscreen.jpg" `
             -Force
 - name: LockScreenImage
@@ -273,7 +273,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\scripts\wallpaper\Set-LockScreenImage.ps1'
+      - '.\scripts\wallpaper\Set-LockScreenImage.ps1'
 - name: LockScreenWidgetsEnabled
   type: Microsoft.Windows/Registry
   properties:
