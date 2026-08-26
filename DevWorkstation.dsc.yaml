@@ -146,6 +146,14 @@ resources:
     valueName: AutoShareWks
     valueData:
       DWord: 1
+- name: EnableInlineSudo
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: sudo
+    arguments:
+      - config
+      - --enable
+      - normal
 - name: PowerShellExecutionPolicy
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
