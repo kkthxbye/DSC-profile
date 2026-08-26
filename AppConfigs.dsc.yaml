@@ -39,7 +39,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\configs\vscode\Install-Extensions.ps1'
+      - 'C:\code\DSC-profile\scripts\vscode\Install-Extensions.ps1'
 - name: GhConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -78,7 +78,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\configs\gh\Register-SshSigningKey.ps1'
+      - 'C:\code\DSC-profile\scripts\gh\Register-SshSigningKey.ps1'
 - name: WindowsTerminalSettings
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -88,7 +88,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\configs\windowsterminal\Set-Settings.ps1'
+      - 'C:\code\DSC-profile\scripts\windowsterminal\Set-Settings.ps1'
 - name: KeePassXCConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -113,7 +113,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\configs\dbeaver\Set-OneDriveProfileLink.ps1'
+      - 'C:\code\DSC-profile\scripts\dbeaver\Set-OneDriveProfileLink.ps1'
 - name: KeePassOneDriveLink
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -123,7 +123,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\configs\keepassxc\Set-OneDriveVaultLink.ps1'
+      - 'C:\code\DSC-profile\scripts\keepassxc\Set-OneDriveVaultLink.ps1'
 - name: OneDriveKfmOptOut
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -133,7 +133,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\configs\onedrive\Set-KfmOptOut.ps1'
+      - 'C:\code\DSC-profile\scripts\onedrive\Set-KfmOptOut.ps1'
 - name: FarManagerConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -248,7 +248,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\configs\thunderbird\Install-FluentBird.ps1'
+      - 'C:\code\DSC-profile\scripts\thunderbird\Install-FluentBird.ps1'
 - name: ThunderbirdUserPrefs
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -282,7 +282,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\configs\wsl\Install-Ubuntu.ps1'
+      - 'C:\code\DSC-profile\scripts\wsl\Install-Ubuntu.ps1'
 - name: WslAnsiblePlaybook
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
@@ -292,4 +292,4 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\configs\wsl\Invoke-AnsiblePlaybook.ps1'
+      - 'C:\code\DSC-profile\scripts\wsl\Invoke-AnsiblePlaybook.ps1'

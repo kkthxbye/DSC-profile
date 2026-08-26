@@ -273,7 +273,7 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -File
-      - 'C:\code\DSC-profile\configs\wallpaper\Set-LockScreenImage.ps1'
+      - 'C:\code\DSC-profile\scripts\wallpaper\Set-LockScreenImage.ps1'
 - name: LockScreenWidgetsEnabled
   type: Microsoft.Windows/Registry
   properties:
