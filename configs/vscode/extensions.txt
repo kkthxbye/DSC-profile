@@ -41,7 +41,6 @@ redhat.vscode-xml
 redhat.vscode-yaml
 richie5um2.vscode-sort-json
 signageos.signageos-vscode-sops
-snowflake.snowflake-vsc
 sqlfluff.vscode-sqlfluff
 tamasfe.even-better-toml
 terrastruct.d2
