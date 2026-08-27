@@ -176,7 +176,17 @@ resources:
       - -NonInteractive
       - -NoProfile
       - -Command
-      - 'Install-Module -Name PSFzf, powershell-yaml, Microsoft.WinGet.Client, CompletionPredictor -Scope CurrentUser -Force -AllowClobber'
+      - 'Install-Module -Name PSFzf, powershell-yaml, Microsoft.WinGet.Client, CompletionPredictor, AWS.Tools.Installer, AWSCompleter, dotenv, Graphical, InvokeBuild, JoinModule, Microsoft.PowerShell.Crescendo, posh-cli, PowerShell-Beautifier, PSParquet, PSProfiler, PSReadLine, PSScriptAnalyzer, SqlServer, Sudo -Scope CurrentUser -Force -AllowClobber'
+- name: AWSToolsModules
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - 'Install-AWSToolsModule -Name Athena, Bedrock, CloudWatch, CloudWatchLogs, Common, CostExplorer, EC2, ECR, EKS, Glue, IdentityManagement, MQ, MWAA, Organizations, RDS, S3, SecretsManager, SecurityToken -Scope CurrentUser -CleanUp -Force'
 - name: UvTools
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
