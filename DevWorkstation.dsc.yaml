@@ -302,6 +302,20 @@ resources:
     valueName: RotatingLockScreenOverlayEnabled
     valueData:
       DWord: 0
+- name: DisableAIDataAnalysis
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsAI
+    valueName: DisableAIDataAnalysis
+    valueData:
+      DWord: 1
+- name: AllowRecallEnablement
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsAI
+    valueName: AllowRecallEnablement
+    valueData:
+      DWord: 0
 - name: DefenderRunning
   type: Microsoft.Windows/Service
   properties:
