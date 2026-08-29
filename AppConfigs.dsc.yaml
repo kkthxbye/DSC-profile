@@ -150,6 +150,11 @@ resources:
             -Exclude "localconfig.db" `
             -Destination "~\AppData\Roaming\Far Manager\Profile\" `
             -Force
+        New-Item -ItemType Directory -Force -Path "~\AppData\Roaming\Far Manager\Profile\PluginsData"
+        Copy-Item `
+            -Path "$env:DSC_CONFIG_ROOT\configs\farmanager\PluginsData\*.db" `
+            -Destination "~\AppData\Roaming\Far Manager\Profile\PluginsData\" `
+            -Force
         New-Item -ItemType Directory -Force -Path "~\AppData\Local\Far Manager\Profile"
         Copy-Item `
             -Path "$env:DSC_CONFIG_ROOT\configs\farmanager\localconfig.db" `
