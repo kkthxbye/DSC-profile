@@ -55,6 +55,7 @@
   "chat.titleBar.openInAgentsWindow.enabled": false,
   "chat.viewSessions.orientation": "stacked",
   "claudeCode.preferredLocation": "panel",
+  "comments.openView": "never",
   "database-client.autoSync": true,
   "debug.console.collapseIdenticalLines": false,
   "debug.console.fontFamily": "Consolas",
@@ -119,6 +120,7 @@
     "python": false,
     "scminput": false
   },
+  "githubPullRequests.commentExpandState": "collapseAll",
   "githubPullRequests.createOnPublishBranch": "never",
   "githubPullRequests.pullBranch": "never",
   "gitlens.advanced.messages": {
