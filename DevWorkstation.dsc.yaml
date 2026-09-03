@@ -69,6 +69,7 @@ resources:
         Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name sTimeFormat -Value "HH:mm:ss"
         Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name iTime -Value "1"
         Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name iTLZero -Value "1"
+        Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name iFirstDayOfWeek -Value "0"
 - name: AdditionalClockUTCEnabled
   type: Microsoft.Windows/Registry
   properties:
