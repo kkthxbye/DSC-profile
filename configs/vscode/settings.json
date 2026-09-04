@@ -326,9 +326,5 @@
     "file:///home/tema/.vscode-server/extensions/atlassian.atlascode-4.0.13/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "terminal.integrated.initialHint": false,
-  "powershell.powerShellAdditionalExePaths": {
-    "PowerShell 7 (aarch64)": "/opt/microsoft/powershell/7/pwsh"
-  },
-  "powershell.powerShellDefaultVersion": "PowerShell 7 (aarch64)",
   "makefile.configureOnOpen": false
 }
