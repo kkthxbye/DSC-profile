@@ -392,11 +392,13 @@
                 "padding": "0, 0, 0, 0"
             },
             {
-                "commandline": "ssh kkthxbye-work-wsl-native",
-                "guid": "{0de89723-dc71-4b1c-ad08-b07338298978}",
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe",
+                "guid": "{b2daf2ea-fd80-4b9a-b775-75991f881776}",
                 "hidden": false,
                 "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
-                "name": "kkthxbye-work (Ubuntu)"
+                "name": "Ubuntu-26.04",
+                "pathTranslationStyle": "wsl",
+                "startingDirectory": "~"
             }
         ]
     },
