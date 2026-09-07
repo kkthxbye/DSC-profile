@@ -207,6 +207,7 @@
     "initialCols": 140,
     "initialRows": 45,
     "initialPosition": "0,0",
+    "showTabsFullscreen": true,
     "keybindings":
     [
         {
