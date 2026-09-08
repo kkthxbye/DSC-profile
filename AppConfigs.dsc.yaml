@@ -288,6 +288,20 @@ resources:
       - -NoProfile
       - -Command
       - '& "$env:DSC_CONFIG_ROOT\visual_assets\fonts\Install-ConsolasNF.ps1"'
+- name: WslConfig
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - |
+        Copy-Item `
+            -LiteralPath "$env:DSC_CONFIG_ROOT\configs\wsl\.wslconfig" `
+            -Destination "~\.wslconfig" `
+            -Force
 - name: WslUbuntu
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
