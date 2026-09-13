@@ -11,11 +11,11 @@ resources:
     trustLevel: "trusted"
     argument: "https://cdn.winget.microsoft.com/cache"
     name: "winget"
-- name: winget_Git.Git
+- name: winget_Microsoft.Git
   type: Microsoft.WinGet/Package
   dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
   properties:
-    id: "Git.Git"
+    id: "Microsoft.Git"
     source: "winget"
 - name: winget_GitHub.cli
   type: Microsoft.WinGet/Package
