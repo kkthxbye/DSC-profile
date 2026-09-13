@@ -234,26 +234,6 @@ resources:
             git clone https://github.com/kkthxbye/powershell-profile.git "$env:DSC_CONFIG_ROOT\..\powershell-profile"
         }
         pwsh -NoLogo -NonInteractive -NoProfile -File "$env:DSC_CONFIG_ROOT\..\powershell-profile\Install-Profile.ps1"
-- name: OhMyPoshTheme
-  type: Microsoft.DSC.Transitional/RunCommandOnSet
-  properties:
-    executable: pwsh
-    arguments:
-      - -NoLogo
-      - -NonInteractive
-      - -NoProfile
-      - -Command
-      - |
-        if (Test-Path "$env:DSC_CONFIG_ROOT\..\oh-my-posh-theme\.git") {
-            git -C "$env:DSC_CONFIG_ROOT\..\oh-my-posh-theme" pull --ff-only
-        } else {
-            git clone https://github.com/kkthxbye/oh-my-posh-theme.git "$env:DSC_CONFIG_ROOT\..\oh-my-posh-theme"
-        }
-        New-Item -ItemType Directory -Force -Path "~\.poshthemes"
-        Copy-Item `
-            -LiteralPath "$env:DSC_CONFIG_ROOT\..\oh-my-posh-theme\kkthxbye.omp.json" `
-            -Destination "~\.poshthemes\kkthxbye.omp.json" `
-            -Force
 - name: ThunderbirdFluentBird
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
