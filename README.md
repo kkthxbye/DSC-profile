@@ -10,6 +10,7 @@ dsc --trace-level trace --trace-format plaintext config set --file .\Software.wi
 .\scripts\winget\Install-CrippledPackages.ps1
 .\scripts\winget\Repair-PortableSymlinks.ps1
 dsc --trace-level trace --trace-format plaintext config set --file .\AppConfigs.dsc.yaml
+dsc --trace-level trace --trace-format plaintext config set --file .\Wsl.dsc.yaml
 ```
 
 `dsc config test --file <file>` runs the same thing read-only, reporting drift without applying.

@@ -173,12 +173,6 @@ resources:
   properties:
     id: "Microsoft.WinDbg"
     source: "winget"
-- name: winget_Microsoft.WSL
-  type: Microsoft.WinGet/Package
-  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
-  properties:
-    id: "Microsoft.WSL"
-    source: "winget"
 - name: winget_JanDeDobbeleer.OhMyPosh
   type: Microsoft.WinGet/Package
   dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
