@@ -335,18 +335,6 @@ resources:
   properties:
     id: "yitsushi.totp-cli"
     source: "winget"
-- name: winget_Microsoft.VisualStudio.BuildTools
-  type: Microsoft.WinGet/Package
-  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
-  properties:
-    id: "Microsoft.VisualStudio.BuildTools"
-    source: "winget"
-- name: winget_Microsoft.VisualStudio.Community
-  type: Microsoft.WinGet/Package
-  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
-  properties:
-    id: "Microsoft.VisualStudio.Community"
-    source: "winget"
 - name: winget_Mozilla.Thunderbird
   type: Microsoft.WinGet/Package
   dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]

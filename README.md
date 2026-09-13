@@ -18,6 +18,7 @@ DSC v3
 
 # Optional:
 dsc --trace-level trace --trace-format plaintext config set --file .\Wsl.dsc.yaml
+dsc --trace-level trace --trace-format plaintext config set --file .\VisualStudio.dsc.yaml
 ```
 
 `dsc config test --file <file>` runs the same thing read-only, reporting drift without applying.

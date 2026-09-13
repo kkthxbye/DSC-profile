@@ -1,0 +1,25 @@
+$schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
+metadata:
+  winget:
+    processor:
+      identifier: "dscv3"
+resources:
+- name: winget_source
+  type: Microsoft.WinGet/Source
+  properties:
+    type: "Microsoft.PreIndexed.Package"
+    trustLevel: "trusted"
+    argument: "https://cdn.winget.microsoft.com/cache"
+    name: "winget"
+- name: winget_Microsoft.VisualStudio.BuildTools
+  type: Microsoft.WinGet/Package
+  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
+  properties:
+    id: "Microsoft.VisualStudio.BuildTools"
+    source: "winget"
+- name: winget_Microsoft.VisualStudio.Community
+  type: Microsoft.WinGet/Package
+  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
+  properties:
+    id: "Microsoft.VisualStudio.Community"
+    source: "winget"
