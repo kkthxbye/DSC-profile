@@ -13,3 +13,8 @@ dsc --trace-level trace --trace-format plaintext config set --file .\AppConfigs.
 ```
 
 `dsc config test --file <file>` runs the same thing read-only, reporting drift without applying.
+
+To see the ansible progress:
+```
+wsl -d Ubuntu-26.04 --exec tail -f /tmp/ansible-playbook.log
+```
