@@ -341,7 +341,7 @@ resources:
     keyPath: HKLM\SOFTWARE\OpenSSH
     valueName: DefaultShell
     valueData:
-      String: pwsh.exe
+      String: C:\Program Files\PowerShell\7\pwsh.exe
 - name: SshdDefaultShellCommandOption
   type: Microsoft.Windows/Registry
   properties:
@@ -363,3 +363,19 @@ resources:
     valueName: DefaultShellArguments
     valueData:
       String: -NoLogo -NoProfileLoadTime
+- name: SshdRestartForDefaultShell
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - Restart-Service -Name sshd -Force
+  dependsOn:
+    - "[resourceId('Microsoft.Windows/Service', 'SshdRunning')]"
+    - "[resourceId('Microsoft.Windows/Registry', 'SshdDefaultShell')]"
+    - "[resourceId('Microsoft.Windows/Registry', 'SshdDefaultShellCommandOption')]"
+    - "[resourceId('Microsoft.Windows/Registry', 'SshdDefaultShellEscapeArguments')]"
+    - "[resourceId('Microsoft.Windows/Registry', 'SshdDefaultShellArguments')]"
