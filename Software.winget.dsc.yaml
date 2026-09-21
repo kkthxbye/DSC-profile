@@ -35,12 +35,6 @@ resources:
   properties:
     id: "Microsoft.WindowsTerminal"
     source: "winget"
-- name: winget_Microsoft.PowerShell
-  type: Microsoft.WinGet/Package
-  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
-  properties:
-    id: "Microsoft.PowerShell"
-    source: "winget"
 - name: winget_OpenJS.NodeJS
   type: Microsoft.WinGet/Package
   dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]

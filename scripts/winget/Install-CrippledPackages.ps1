@@ -1,11 +1,10 @@
 $ErrorActionPreference = "Stop"
 
-$CrippledPackages = @(
-    "mitmproxy.mitmproxy",
-    "Microsoft.Sysinternals.Suite"
-)
-
-foreach ($id in $CrippledPackages) {
-    winget install --id $id --source winget --silent --disable-interactivity `
-        --accept-package-agreements --accept-source-agreements --ignore-security-hash
+@(
+    @{Id = "mitmproxy.mitmproxy"; Args = @("--ignore-security-hash")}
+    @{Id = "Microsoft.Sysinternals.Suite"; Args = @("--ignore-security-hash")}
+    @{Id = "Microsoft.PowerShell"; Args = @("--installer-type", "wix", "--scope", "machine", "--custom", "ADD_PATH=1")}
+) | ForEach-Object {
+    winget install --id $_.Id --source winget --silent --disable-interactivity `
+        --accept-package-agreements --accept-source-agreements @($_.Args)
 }
