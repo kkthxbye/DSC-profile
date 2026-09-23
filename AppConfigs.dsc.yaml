@@ -160,6 +160,7 @@ resources:
             -Path "$env:DSC_CONFIG_ROOT\configs\farmanager\localconfig.db" `
             -Destination "~\AppData\Local\Far Manager\Profile\" `
             -Force
+        Remove-Item -Path "~\AppData\Local\Far Manager\Profile\plugincache*.db" -Force -ErrorAction SilentlyContinue
 - name: SshConfig
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:
