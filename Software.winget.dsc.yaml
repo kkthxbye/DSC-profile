@@ -101,12 +101,6 @@ resources:
   properties:
     id: "KeePassXCTeam.KeePassXC"
     source: "winget"
-- name: winget_LibreHardwareMonitor.LibreHardwareMonitor
-  type: Microsoft.WinGet/Package
-  dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
-  properties:
-    id: "LibreHardwareMonitor.LibreHardwareMonitor"
-    source: "winget"
 - name: winget_junegunn.fzf
   type: Microsoft.WinGet/Package
   dependsOn: ["[resourceId('Microsoft.WinGet/Source', 'winget_source')]"]
