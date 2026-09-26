@@ -243,6 +243,23 @@ resources:
     valueName: TileWallpaper
     valueData:
       String: "0"
+- name: DesktopBackgroundTypePicture
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers
+    valueName: BackgroundType
+    valueData:
+      DWord: 0
+- name: DesktopWallpaperApply
+  type: Microsoft.DSC.Transitional/RunCommandOnSet
+  properties:
+    executable: pwsh
+    arguments:
+      - -NoLogo
+      - -NonInteractive
+      - -NoProfile
+      - -Command
+      - '& "$env:DSC_CONFIG_ROOT\scripts\wallpaper\Set-DesktopWallpaper.ps1"'
 - name: LockScreenAssetFile
   type: Microsoft.DSC.Transitional/RunCommandOnSet
   properties:

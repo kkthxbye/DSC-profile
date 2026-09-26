@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 $imagePath = "C:\assets\lockscreens\lockscreen.jpg"
 
 if ($PSVersionTable.PSEdition -ne 'Desktop') {
